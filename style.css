@@ -1,0 +1,360 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #e6f1ff;
+    background-color: #0a192f;
+}
+
+header {
+    background-color: rgba(10, 25, 47, 0.9);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #64ffda;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #e6f1ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #64ffda;
+}
+
+/* Efeito de digitação */
+#typewriter {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.3rem;
+    color: #64ffda;
+    overflow: hidden;
+    border-right: 0.15em solid #64ffda;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Animação de digitação */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* Animação do cursor piscando */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: #64ffda
+    }
+}
+
+.section {
+    padding: 100px 20px;
+    text-align: left;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1,
+h3 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    color: #64ffda;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+h2 {
+    margin-top: 8px;
+}
+
+.terminal_titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.terminal_titulo i {
+    font-size: 1.5rem;
+    color: #64ffda;
+}
+
+.terminal_titulo h2 {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.8rem;
+    color: #e6f1ff;
+    margin: 0;
+}
+
+h3 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #ccd6f6;
+}
+
+.container b {
+    color: #64ffda;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid;
+    border-color: #64ffda;
+    color: #64ffda;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+}
+
+.home-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.greeting {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.2rem;
+    color: #64ffda;
+}
+
+.description {
+    max-width: 600px;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+
+.about-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text {
+    max-width: 600px;
+    flex: 2;
+    text-align: justify;
+    margin-bottom: 7rem;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #ccd6f6;
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #64ffda;
+    transform: translateY(-3px);
+    filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.5));
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: #64ffda;
+}
+
+.habilidades_text {
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+    margin-top: 40px;
+}
+
+.skill {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.skill i {
+    font-size: 4.5rem;
+    color: #ccd6f6;
+    /* Cor inicial (mais opaca) */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efeito de hover */
+.skill:hover i {
+    color: #64ffda;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.5));
+}
+
+.experience-item {
+    margin-bottom: 20px;
+}
+
+.experience-item h3 {
+    font-size: 1.5rem;
+    color: #64ffda;
+}
+
+.company {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #ccd6f6;
+}
+
+.date {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #8892b0;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #090225;
+    transition: transform 0.3s ease;
+}
+
+.project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(2, 3, 52, 0.653);
+    padding: 20px;
+    transition: bottom 0.3s ease;
+}
+
+.project:hover .project-info {
+    bottom: 0;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+}
+
+/* Contato */
+.contact-section {
+    text-align: left;
+}
+
+#light {
+    position: fixed;
+    width: 400px;
+    /* Tamanho da luz */
+    height: 400px;
+    background: radial-gradient(circle,
+            rgba(100, 255, 219, 0.11) 0%,
+            /* Cor da luz (azul esverdeado) */
+            rgba(100, 255, 219, 0) 70%
+            /* Transparência no exterior */
+        );
+    border-radius: 50%;
+    pointer-events: none;
+    /* Para não interferir com cliques */
+    transform: translate(-50%, -50%);
+    /* Centraliza a luz no mouse */
+    z-index: -1;
+    /* Coloca a luz atrás do conteúdo */
+}
+
+footer {
+    background-color: #112240;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
