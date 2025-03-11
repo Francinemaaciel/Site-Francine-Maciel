@@ -58,6 +58,19 @@ nav ul li a:hover {
     color: #64ffda;
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #64ffda;
+    margin: 4px 0;
+}
+
 /* Efeito de digitação */
 #typewriter {
     font-family: 'Space Mono', monospace;
@@ -192,7 +205,6 @@ p {
     text-align: justify;
 }
 
-
 .about-content {
     display: flex;
     gap: 40px;
@@ -215,6 +227,7 @@ p {
     display: flex;
     gap: 20px;
     margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .social-icons a {
@@ -235,6 +248,7 @@ p {
     border-radius: 10px;
     border: 2px solid;
     border-color: #64ffda;
+    position: initial;
 }
 
 .habilidades_text {
@@ -257,15 +271,17 @@ p {
 .skill i {
     font-size: 4.5rem;
     color: #ccd6f6;
-    /* Cor inicial (mais opaca) */
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Efeito de hover */
 .skill:hover i {
     color: #64ffda;
     transform: scale(1.1);
     filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.5));
+}
+
+.formacao-item {
+    margin-bottom: 20px;
 }
 
 .experience-item {
@@ -311,23 +327,25 @@ p {
 
 .project-info {
     position: absolute;
-    bottom: -100%;
+    bottom: 0;
     left: 0;
     right: 0;
     background-color: rgba(2, 3, 52, 0.653);
     padding: 20px;
-    transition: bottom 0.3s ease;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .project:hover .project-info {
-    bottom: 0;
+    transform: translateY(0);
 }
 
 .project:hover {
     transform: translateY(-10px);
 }
 
-/* Contato */
 .contact-section {
     text-align: left;
 }
@@ -335,21 +353,12 @@ p {
 #light {
     position: fixed;
     width: 400px;
-    /* Tamanho da luz */
     height: 400px;
-    background: radial-gradient(circle,
-            rgba(100, 255, 219, 0.11) 0%,
-            /* Cor da luz (azul esverdeado) */
-            rgba(100, 255, 219, 0) 70%
-            /* Transparência no exterior */
-        );
+    background: radial-gradient(circle, rgba(100, 255, 219, 0.11) 0%, rgba(100, 255, 219, 0) 70%);
     border-radius: 50%;
     pointer-events: none;
-    /* Para não interferir com cliques */
     transform: translate(-50%, -50%);
-    /* Centraliza a luz no mouse */
     z-index: -1;
-    /* Coloca a luz atrás do conteúdo */
 }
 
 footer {
@@ -357,4 +366,106 @@ footer {
     padding: 20px 0;
     text-align: center;
     margin-top: 50px;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* dispositivos móveis */
+@media (max-width: 767px) {
+    body {
+        font-size: 14px;
+    }
+
+    nav {
+        padding: 0.5rem 1rem;
+    }
+
+    .logo a {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #0a192f;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .menu-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #64ffda;
+        margin: 4px 0;
+    }
+
+    .home-section h1 {
+        font-size: 2rem;
+    }
+
+    .home-section p {
+        font-size: 1rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-text {
+        margin-bottom: 2rem;
+    }
+
+    .about-image img {
+        display: none;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .skill i {
+        font-size: 3rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-info p {
+        display: none;
+
+    }
+
+    .contact-section {
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    #typewriter {
+        font-size: 1rem;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
 }

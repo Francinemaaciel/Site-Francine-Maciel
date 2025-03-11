@@ -50,3 +50,11 @@ function typeWriter() {
 }
 
 typeWriter();
+
+// menu hamburguer
+const mobileMenu = document.querySelector('.menu-toggle');
+const navList = document.querySelector('nav ul');
+
+mobileMenu.addEventListener('click', () => {
+    navList.classList.toggle('active');
+});
